@@ -7,7 +7,7 @@ def getPort():
     for i in range(0, N):
         port = ports[i]
         strPort = str(port)
-        if "USB Serial Device" in strPort:
+        if "USB-SERIAL" in strPort:
             splitPort = strPort.split(" ")
             commPort = (splitPort[0])
     return commPort
@@ -21,11 +21,11 @@ def processData(client,data):
     splitData = data.split(":")
     print(splitData)
     if splitData[1] == "TEMP":
-        client.publish("bbc-temp", splitData[2])
+        client.publish("sensor_temp", splitData[2])
     if splitData[1] == "HUMID":
-        client.publish("humid",splitData[2])
+        client.publish("sensor_humid",splitData[2])
     if splitData[1] == "LIGHT":
-        client.publish("light",splitData[2])
+        client.publish("sensor_light",splitData[2])
 
 def readSerial(client):
     bytesToRead = ser.inWaiting()

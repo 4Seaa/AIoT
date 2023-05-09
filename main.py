@@ -7,7 +7,7 @@ from Adafruit_IO import MQTTClient
 
 AIO_FEED_ID = ["device-fan", "device-light", "mode"]
 AIO_USERNAME = "hai305"
-AIO_KEY = "aio_DdhH71P4jQlRX9XjoW9Hw278lHfd"
+AIO_KEY = "aio_lWNh48Yn84g470SXFIL7G3qT7Nt9"
 
 
 def connected(client):
